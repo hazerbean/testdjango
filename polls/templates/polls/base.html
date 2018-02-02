@@ -1,6 +1,8 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
   <meta charset="utf-8">
   <title>{% block title %}Django Simple Login{% endblock %}</title>
 </head>
@@ -8,7 +10,7 @@
   <header>
     <h1>Django Simple Login</h1>
     {% if user.is_authenticated %}
-      Hi {{ user.username }}!
+      <p>Hi {{ user.username }}!</p>
       <a href="{% url 'logout' %}">logout</a>
     {% else %}
       <a href="{% url 'login' %}">login</a>
@@ -21,7 +23,7 @@
   </main>
   <hr>
   <footer>
-  
+
   </footer>
 </body>
 </html>
